@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Mr Code - Portfolio Website
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen)](https://rahuljoshi07.github.io/Portfolio-Website/)
@@ -8,6 +9,8 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](#)
 
 A modern, responsive portfolio website showcasing my skills as a **Full-Stack Developer**, **DevOps Engineer**, and **Game Developer**. Built with modern web technologies and featuring smooth animations, interactive elements, and a clean design.
+=======
+>>>>>>> 99f4939bf2e2460f98cbc7ae23ffee167c26ebc2
 
 ## 🌟 Features
 
