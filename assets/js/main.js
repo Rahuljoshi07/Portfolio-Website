@@ -7,7 +7,7 @@
     /* 
    MixitUp
    ========================================================================== */
-  $('#portfolio').mixItUp();
+  // $('#MixItUp').mixItUp(); // Disabled for custom filtering
 
   /* 
    One Page Navigation & wow js
