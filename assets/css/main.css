@@ -844,17 +844,16 @@ a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
   color: #fff;
 }
-/* Custom Project Cards Styles */
+/* Custom Project Cards Styles for Uniform Dimensions and Updated Color Scheme */
 .project-card {
-  background: #111 !important;
+  background: #000 !important;
   border: 2px solid #333;
   border-radius: 15px;
   padding: 25px;
   text-align: center;
   margin-bottom: 30px;
   transition: all 0.3s ease-in-out;
-  min-height: 384px !important; /* 24rem = 384px */
-  max-height: 384px !important;
+  height: 400px !important; /* Updated height for uniform dimensions */
   width: 100% !important;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
