@@ -1,4 +1,18 @@
 (function($) {
+  $(document).ready(function() {
+    // Smooth scroll for navbar links
+    $('.navbar-nav .nav-link').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 70 // adjust offset for fixed navbar
+        }, 600, 'swing');
+      }
+    });
+  });
+})(jQuery);
+(function($) {
   
   "use strict";  
 
@@ -21,26 +35,26 @@
   
   /*Page Loader active
     ========================================================*/
-	
-		/*PRELOADER JS*/ 
-			$('.spinner').fadeOut();
-			$('.preloader').delay(350).fadeOut('slow'); 
-		/*END PRELOADER JS*/
+  
+    /*PRELOADER JS*/ 
+      $('.spinner').fadeOut();
+      $('.preloader').delay(350).fadeOut('slow'); 
+    /*END PRELOADER JS*/
 
-		/*START MENU JS*/		
-			 if ($(window).scrollTop() > 200) {
+    /*START MENU JS*/		
+       if ($(window).scrollTop() > 200) {
               $('.fixed-top').addClass('menu-bg');
           } else {
               $('.fixed-top').removeClass('menu-bg');
           }
-			$(window).on('scroll', function(){
-				if ( $(window).scrollTop() > 100 ) {
-					$('.site-navigation, .header-white, .header').addClass('navbar-fixed');
-				} else {
-					$('.site-navigation, .header-white, .header').removeClass('navbar-fixed');
-				}
-			});				
-		/*END MENU JS*/	
+      $(window).on('scroll', function(){
+        if ( $(window).scrollTop() > 100 ) {
+          $('.site-navigation, .header-white, .header').addClass('navbar-fixed');
+        } else {
+          $('.site-navigation, .header-white, .header').removeClass('navbar-fixed');
+        }
+      });				
+    /*END MENU JS*/	
 
       /* WOW Scroll Spy
     ========================================================*/
@@ -64,30 +78,30 @@
      delay: 20,
      time: 3000
     });
-	
-	 /* Tesimonial
+  
+   /* Tesimonial
     ========================================================*/
-	$(".carousel-testimony").owlCarousel({
-		loop:true,
-		navText:false,
-		autoplay: true,
-		items:1,
-		slideSpeed: 5000,
-		responsive:{
-			0:{
-				items:1
-			},
-			768:{
-				items:1
-			},
-			979:{
-				items:1
-			},
-			1000:{
-				items:1
-			}
-		}
-	});
+  $(".carousel-testimony").owlCarousel({
+    loop:true,
+    navText:false,
+    autoplay: true,
+    items:1,
+    slideSpeed: 5000,
+    responsive:{
+      0:{
+        items:1
+      },
+      768:{
+        items:1
+      },
+      979:{
+        items:1
+      },
+      1000:{
+        items:1
+      }
+    }
+  });
 
 
     /* Back Top Link active
