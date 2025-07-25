@@ -62,6 +62,9 @@
 		<!-- Responsive Style -->
 		<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 		
+		<!-- Animate.css CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+		
 		<!-- Enhanced Glassmorphism Styles -->
 		<style>
 /* Simplified Glassmorphism Project Cards */
@@ -95,6 +98,7 @@
 				
 				/* Glass Surface Texture */
 				filter: contrast(1.05) brightness(1.0);
+    			padding: 35px !important;
 			}
 			
 /* Transparent gradient overlay */
@@ -197,6 +201,16 @@
 			
 			.glassmorphism-card {
 				animation: borderGlow 4s ease-in-out infinite;
+				transition: all 0.5s ease;
+				border-radius: 14px; /* More rectangular */
+			}
+			
+			/* Timeline Section Specific Styles */
+			.glassmorphism-card h4,
+			.glassmorphism-card h5,
+			.glassmorphism-card p {
+				position: relative;
+				z-index: 2;
 			}
 
 			/* Hero Section Full Viewport Height */
@@ -252,17 +266,17 @@
 			<nav class="navbar navbar-toggleable-sm fixed-top navbar-light bg-faded site-navigation dark_bg_menu">
 				<div class="container">
 					<a class="navbar-brand" href="index2.html"><p>Mr Code</p></a>          
-				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
-				    </button>
-				    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+					</button>
+					<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
 						<ul class="navbar-nav">
 						  <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
 						  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 						  <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
 						  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 						</ul>
-				    </div>
+					</div>
 				</div>
 			</nav>      
 		<!-- END NAVBAR -->
@@ -301,324 +315,374 @@
 		
 		<!-- About Me Section Start -->
 	 <style>
-        .dark_bg {
-            background-color: #000000
-            color: #ffffff;
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 60px;
-        }
-        
-        /* Enhanced Glassmorphism Card Styles */
-        .custom-card {
-            /* Enhanced Glassmorphism Background */
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.08), 
-                rgba(40, 40, 40, 0.15), 
-                rgba(80, 80, 80, 0.12)) !important;
-            
-            /* Advanced Backdrop Filter */
-            backdrop-filter: blur(25px) saturate(200%) brightness(110%) !important;
-            -webkit-backdrop-filter: blur(25px) saturate(200%) brightness(110%) !important;
-            
-            /* Glassmorphism Border */
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.25) !important;
-            border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
-            
-            border-radius: 20px;
-            padding: 30px;
-            height: 100%;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            
-            /* Glass Surface Texture */
-            filter: contrast(1.1) brightness(1.05);
-        }
-        
-        .custom-card:hover::before {
-            left: 100%;
-        }
-        
-        .custom-card:hover {
-            background: linear-gradient(135deg, rgba(30, 30, 30, 0.2), rgba(60, 60, 60, 0.15)) !important;
-            border-color: rgba(150, 150, 150, 0.5) !important;
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.2),
-                0 0 30px rgba(50, 50, 50, 0.15),
-                0 0 0 1px rgba(100, 100, 100, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-        }
-        
-        /* Enhanced content positioning */
-        .custom-card > * {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Introduction Card */
-        .intro-card {
-            min-height: 600px;
-        }
-        
-        /* Education & Tech Cards */
-        .education-card, .tech-card {
-            min-height: 290px;
-        }
-        
-        /* Education Items */
-        .education-item {
-            background: rgba(255, 255, 0, 0.1);
-            border-left: 4px solid #ffff00;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .education-item:hover {
-            background: rgba(255, 255, 0, 0.15);
-            transform: translateX(5px);
-        }
-        
-        /* Tech Tags */
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .tech-tag {
-            background: rgba(255, 255, 0, 0.15);
-            color: #ffff00;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .tech-tag:hover {
-            background: #ffff00;
-            color: #000;
-            transform: scale(1.05);
-        }
-        
-        /* Buttons */
-        .btn-gradient {
-            background: linear-gradient(45deg, #ffff00, #ff6b35);
-            color: #000;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-right: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 255, 0, 0.4);
-            color: #000;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: #ffff00;
-            padding: 12px 30px;
-            border: 2px solid #ffff00;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-outline:hover {
-            background: #ffff00;
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 255, 0, 0.4);
-        }
-        
-        /* Text Styles */
-        .text-yellow {
-            color: #ffff00;
-        }
-        
-        .text-gray-300 {
-            color: #d1d5db;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .intro-card {
-                min-height: auto;
-                margin-bottom: 20px;
-            }
-            
-            .education-card, .tech-card {
-                min-height: auto;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+		.dark_bg {
+			background-color: #000000
+			color: #ffffff;
+		}
+		
+		.section-padding {
+			padding: 80px 0;
+		}
+		
+		.section-title {
+			font-size: 3rem;
+			font-weight: 700;
+			margin-bottom: 60px;
+		}
+		
+		/* Enhanced Glassmorphism Card Styles */
+		.custom-card {
+			/* Enhanced Glassmorphism Background */
+			background: linear-gradient(135deg, 
+				rgba(255, 255, 255, 0.08), 
+				rgba(40, 40, 40, 0.15), 
+				rgba(80, 80, 80, 0.12)) !important;
+			
+			/* Advanced Backdrop Filter */
+			backdrop-filter: blur(25px) saturate(200%) brightness(110%) !important;
+			-webkit-backdrop-filter: blur(25px) saturate(200%) brightness(110%) !important;
+			
+			/* Glassmorphism Border */
+			border: 1px solid rgba(255, 255, 255, 0.15) !important;
+			border-top: 1px solid rgba(255, 255, 255, 0.25) !important;
+			border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+			
+			border-radius: 20px;
+			padding: 30px;
+			height: 100%;
+			transition: all 0.5s ease;
+			position: relative;
+			overflow: hidden;
+			
+			/* Glass Surface Texture */
+			filter: contrast(1.1) brightness(1.05);
+		}
+		
+		.custom-card:hover::before {
+			left: 100%;
+		}
+		
+		.custom-card:hover {
+			background: linear-gradient(135deg, rgba(30, 30, 30, 0.2), rgba(60, 60, 60, 0.15)) !important;
+			border-color: rgba(150, 150, 150, 0.5) !important;
+			transform: translateY(-8px) scale(1.01);
+			box-shadow: 
+				0 20px 40px rgba(0, 0, 0, 0.2),
+				0 0 30px rgba(50, 50, 50, 0.15),
+				0 0 0 1px rgba(100, 100, 100, 0.25),
+				inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+		}
+		
+		/* Enhanced content positioning */
+		.custom-card > * {
+			position: relative;
+			z-index: 2;
+		}
+		
+		/* Introduction Card */
+		.intro-card {
+			min-height: 600px;
+		}
+		
+		/* Education & Tech Cards */
+		.education-card, .tech-card {
+			min-height: 290px;
+		}
+		
+		/* Education Items */
+		.education-item {
+			background: rgba(255, 255, 0, 0.1);
+			border-left: 4px solid #ffff00;
+			border-radius: 8px;
+			padding: 20px;
+			margin-bottom: 15px;
+			transition: all 0.3s ease;
+		}
+		
+		.education-item:hover {
+			background: rgba(255, 255, 0, 0.15);
+			transform: translateX(5px);
+		}
+		
+		/* Tech Tags */
+		.tech-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-bottom: 20px;
+		}
+		
+		.tech-tag {
+			background: rgba(255, 255, 0, 0.15);
+			color: #ffff00;
+			padding: 5px 15px;
+			border-radius: 20px;
+			font-size: 0.85rem;
+			font-weight: 500;
+			border: 1px solid rgba(255, 255, 0, 0.3);
+			transition: all 0.3s ease;
+		}
+		
+		.tech-tag:hover {
+			background: #ffff00;
+			color: #000;
+			transform: scale(1.05);
+		}
+		
+		/* Buttons */
+		.btn-gradient {
+			background: linear-gradient(45deg, #ffff00, #ff6b35);
+			color: #000;
+			padding: 12px 30px;
+			border-radius: 50px;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-right: 15px;
+			transition: all 0.3s ease;
+			border: none;
+			text-decoration: none;
+			display: inline-block;
+		}
+		
+		.btn-gradient:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 20px rgba(255, 255, 0, 0.4);
+			color: #000;
+		}
+		
+		.btn-outline {
+			background: transparent;
+			color: #ffff00;
+			padding: 12px 30px;
+			border: 2px solid #ffff00;
+			border-radius: 50px;
+			font-weight: 600;
+			text-transform: uppercase;
+			transition: all 0.3s ease;
+			text-decoration: none;
+			display: inline-block;
+		}
+		
+		.btn-outline:hover {
+			background: #ffff00;
+			color: #000;
+			transform: translateY(-2px);
+			box-shadow: 0 5px 20px rgba(255, 255, 0, 0.4);
+		}
+		
+		/* Text Styles */
+		.text-yellow {
+			color: #ffff00;
+		}
+		
+		.text-gray-300 {
+			color: #d1d5db;
+		}
+		
+		/* Responsive adjustments */
+		@media (max-width: 768px) {
+			.section-title {
+				font-size: 2rem;
+			}
+			
+			.intro-card {
+				min-height: auto;
+				margin-bottom: 20px;
+			}
+			
+			.education-card, .tech-card {
+				min-height: auto;
+				margin-bottom: 20px;
+			}
+		}
+	</style>
 </head>
 <body>
-    <section id="about" class="dark_bg section-padding">
-        <div class="container">
-            <!-- Section Title -->
-            <h2 class="section-title text-center">
-                <span class="text-yellow">About</span> Me
-            </h2>
-            
-            <div class="row align-items-stretch">
-                <!-- Introduction Section (Left - 50% width) -->
-                <div class="col-md-6 mb-4">
-                    <div class="custom-card intro-card wow fadeInLeft" data-wow-delay="0.6s">
-                        <h3 class="text-white mb-4" style="font-size: 1.8rem; font-weight: 700;">
-                            🚀 From <span class="text-yellow">Curious Beginner</span> to <span class="text-yellow">Cloud-Native Engineer</span>
-                        </h3>
-                        
-                        <p class="text-gray-300 mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                            My journey started with simple "Hello World" programs and has grown into building scalable cloud solutions that serve thousands of users. What began as curiosity about how websites work has evolved into a passion for creating robust, efficient systems that solve real-world problems.
-                        </p>
-                        
-                        <p class="text-gray-300 mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                            Currently mastering <strong class="text-yellow">Cloud Computing</strong> with Docker, Kubernetes, and Jenkins while pursuing my MCA. I specialize in DevOps automation, containerization, and CI/CD pipelines. My experience spans from creating Telegram bots that automate workflows to deploying monitoring dashboards on Kubernetes clusters.
-                        </p>
-                        
-                        <p class="text-gray-300 mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                            When I'm not deploying applications or writing infrastructure code, you'll find me creating games in Unity, experimenting with new technologies, or contributing to open-source projects. I believe in continuous learning and staying updated with the latest trends in cloud computing and software development.
-                        </p>
-                        
-                        <p class="text-gray-300 mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-                            💡 <strong>My philosophy?</strong> Every bug is a feature request in disguise, every deployment is a lesson learned, and every line of code is a step toward building something extraordinary.
-                        </p>
-                        
-                        <div class="mt-auto">
-                            <a href="#portfolio" class="btn-gradient">
-                                View My Work
-                            </a>
-                            <a href="#contact" class="btn-outline">
-                                Let's Connect
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Side Container -->
-                <div class="col-md-6">
-                    <div class="row">
-                        <!-- Education Section (Top Right - 50% height) -->
-                        <div class="col-12 mb-4">
-                            <div class="custom-card education-card wow fadeInRight" data-wow-delay="0.8s">
-                                <h4 class="text-white mb-4" style="font-size: 1.5rem; font-weight: 600;">
-                                    🎓 <strong>Educational Journey</strong>
-                                </h4>
-                                
-                                <div class="education-item">
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <h5 class="text-white mb-0" style="font-size: 1.2rem; font-weight: 600;">2020-2023</h5>
-                                    </div>
-                                    <h6 class="text-yellow mb-1" style="font-weight: 600;">Bachelor of Computer Applications (BCA)</h6>
-                                    <p class="text-gray-300 mb-0">Quantum University</p>
-                                </div>
-                                
-                                <div class="education-item mb-0">
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <h5 class="text-white mb-0" style="font-size: 1.2rem; font-weight: 600;">2024-Present</h5>
-                                    </div>
-                                    <h6 class="text-yellow mb-1" style="font-weight: 600;">Master of Computer Applications (MCA)</h6>
-                                    <p class="text-gray-300 mb-0"><strong>Specialization:</strong> Cloud Computing</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tech Arsenal Section (Bottom Right - 50% height) -->
-                        <div class="col-12">
-                            <div class="custom-card tech-card wow fadeInUp" data-wow-delay="1.0s">
-                                <h4 class="text-white mb-4" style="font-size: 1.5rem; font-weight: 600;">
-                                    ⚡ <strong>Tech Arsenal</strong>
-                                </h4>
-                                
-                                <!-- Cloud & DevOps -->
-                                <div class="tech-category mb-3">
-                                    <h6 class="text-white mb-2" style="font-weight: 600;">
-                                        ☁️ <strong>Cloud & DevOps</strong>
-                                    </h6>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Docker</span>
-                                        <span class="tech-tag">Kubernetes</span>
-                                        <span class="tech-tag">Jenkins</span>
-                                        <span class="tech-tag">Ansible</span>
-                                        <span class="tech-tag">Terraform</span>
-                                        <span class="tech-tag">GitHub Actions</span>
-                                        <span class="tech-tag">AWS</span>
-                                        <span class="tech-tag">Azure</span>
-                                        <span class="tech-tag">Prometheus</span>
-                                        <span class="tech-tag">Grafana</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Web & Full Stack -->
-                                <div class="tech-category mb-3">
-                                    <h6 class="text-white mb-2" style="font-weight: 600;">
-                                        💻 <strong>Web & Full Stack</strong>
-                                    </h6>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">HTML/CSS</span>
-                                        <span class="tech-tag">JavaScript</span>
-                                        <span class="tech-tag">TypeScript</span>
-                                        <span class="tech-tag">React</span>
-                                        <span class="tech-tag">PHP</span>
-                                        <span class="tech-tag">MySQL</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Fun and Frameworks -->
-                                <div class="tech-category">
-                                    <h6 class="text-white mb-2" style="font-weight: 600;">
-                                        🎮 <strong>Fun & Frameworks</strong>
-                                    </h6>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Unity</span>
-                                        <span class="tech-tag">C#</span>
-                                        <span class="tech-tag">Bootstrap</span>
-                                        <span class="tech-tag">Tailwind</span>
-                                        <span class="tech-tag">Material UI</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section id="about" class="dark_bg section-padding">
+		<div class="container">
+			<!-- Section Title -->
+			<h2 class="section-title text-center">
+				<span class="text-yellow">About</span> Me
+			</h2>
+			
+			<div class="row align-items-stretch">
+				<!-- Introduction Section (Left - 50% width) -->
+				<div class="col-md-6 mb-4">
+					<div class="glassmorphism-card intro-card wow fadeInLeft" data-wow-delay="0.6s">
+						<h3 class="text-white mb-4" style="font-size: 1.8rem; font-weight: 700;">
+							🚀 From <span class="text-yellow">Curious Beginner</span> to <span class="text-yellow">Cloud-Native Engineer</span>
+						</h3>
+						
+						<p class="text-gray-300 mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+							My journey started with simple "Hello World" programs and has grown into building scalable cloud solutions that serve thousands of users. What began as curiosity about how websites work has evolved into a passion for creating robust, efficient systems that solve real-world problems.
+						</p>
+						
+						<p class="text-gray-300 mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+							Currently mastering <strong class="text-yellow">Cloud Computing</strong> with Docker, Kubernetes, and Jenkins while pursuing my MCA. I specialize in DevOps automation, containerization, and CI/CD pipelines. My experience spans from creating Telegram bots that automate workflows to deploying monitoring dashboards on Kubernetes clusters.
+						</p>
+						
+						<p class="text-gray-300 mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+							When I'm not deploying applications or writing infrastructure code, you'll find me creating games in Unity, experimenting with new technologies, or contributing to open-source projects. I believe in continuous learning and staying updated with the latest trends in cloud computing and software development.
+						</p>
+						
+						<p class="text-gray-300 mb-5" style="font-size: 1.1rem; line-height: 1.8;">
+							💡 <strong>My philosophy?</strong> Every bug is a feature request in disguise, every deployment is a lesson learned, and every line of code is a step toward building something extraordinary.
+						</p>
+						
+						<div class="mt-auto">
+							<a href="#portfolio" class="btn-gradient">
+								View My Work
+							</a>
+							<a href="#contact" class="btn-outline">
+								Let's Connect
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Right Side Container -->
+				<div class="col-md-6">
+					<div class="row">
+						<!-- Education Section (Top Right - 50% height) -->
+						<div class="col-12 mb-4">
+							<div class="glassmorphism-card education-card wow fadeInRight" data-wow-delay="0.8s">
+								<h4 class="text-white mb-4" style="font-size: 1.5rem; font-weight: 600;">
+									🎓 <strong>Educational Journey</strong>
+								</h4>
+								
+								<div class="education-item">
+									<div class="d-flex justify-content-between align-items-center mb-2">
+										<h5 class="text-white mb-0" style="font-size: 1.2rem; font-weight: 600;">2020-2023</h5>
+									</div>
+									<h6 class="text-yellow mb-1" style="font-weight: 600;">Bachelor of Computer Applications (BCA)</h6>
+									<p class="text-gray-300 mb-0">Quantum University</p>
+								</div>
+								
+								<div class="education-item mb-0">
+									<div class="d-flex justify-content-between align-items-center mb-2">
+										<h5 class="text-white mb-0" style="font-size: 1.2rem; font-weight: 600;">2024-Present</h5>
+									</div>
+									<h6 class="text-yellow mb-1" style="font-weight: 600;">Master of Computer Applications (MCA)</h6>
+									<p class="text-gray-300 mb-0"><strong>Specialization:</strong> Cloud Computing</p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Tech Arsenal Section (Bottom Right - 50% height) -->
+						<div class="col-12">
+							<div class="glassmorphism-card tech-card wow fadeInUp" data-wow-delay="1.0s">
+								<h4 class="text-white mb-4" style="font-size: 1.5rem; font-weight: 600;">
+									⚡ <strong>Tech Arsenal</strong>
+								</h4>
+								
+								<!-- Cloud & DevOps -->
+								<div class="tech-category mb-3">
+									<h6 class="text-white mb-2" style="font-weight: 600;">
+										☁️ <strong>Cloud & DevOps</strong>
+									</h6>
+									<div class="tech-tags">
+										<span class="tech-tag">Docker</span>
+										<span class="tech-tag">Kubernetes</span>
+										<span class="tech-tag">Jenkins</span>
+										<span class="tech-tag">Ansible</span>
+										<span class="tech-tag">Terraform</span>
+										<span class="tech-tag">GitHub Actions</span>
+										<span class="tech-tag">AWS</span>
+										<span class="tech-tag">Azure</span>
+										<span class="tech-tag">Prometheus</span>
+										<span class="tech-tag">Grafana</span>
+									</div>
+								</div>
+								
+								<!-- Web & Full Stack -->
+								<div class="tech-category mb-3">
+									<h6 class="text-white mb-2" style="font-weight: 600;">
+										💻 <strong>Web & Full Stack</strong>
+									</h6>
+									<div class="tech-tags">
+										<span class="tech-tag">HTML/CSS</span>
+										<span class="tech-tag">JavaScript</span>
+										<span class="tech-tag">TypeScript</span>
+										<span class="tech-tag">React</span>
+										<span class="tech-tag">PHP</span>
+										<span class="tech-tag">MySQL</span>
+									</div>
+								</div>
+								
+								<!-- Fun and Frameworks -->
+								<div class="tech-category">
+									<h6 class="text-white mb-2" style="font-weight: 600;">
+										🎮 <strong>Fun & Frameworks</strong>
+									</h6>
+									<div class="tech-tags">
+										<span class="tech-tag">Unity</span>
+										<span class="tech-tag">C#</span>
+										<span class="tech-tag">Bootstrap</span>
+										<span class="tech-tag">Tailwind</span>
+										<span class="tech-tag">Material UI</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
 		<!-- About Me Section End -->
 	
+		<!-- Timeline Section with Glassmorphism Cards -->
+		<section id="timeline" style="background-color: #000000; padding: 80px 0;">
+			<div class="container">
+				<h2 class="text-center mb-5" style="color:  #ffff00; font-weight: bold; font-size: 2.8rem; position: relative;">
+					🌟 My <span style="color: white;">Growth Timeline</span>
+					<div style="width: 100px; height: 4px; background-color:  #ffff00; margin: 10px auto 0; border-radius: 50px;"></div>
+				</h2>
+
+				<div class="row justify-content-center">
+
+					<!-- Card 1 -->
+<div class="col-md-6 col-lg-4 mb-4 ">
+	<div class="glassmorphism-card p-4 animate__animated animate__fadeInUp h-100 text-center" style="min-height: 340px;">
+							<div class="timeline-icon mb-3">
+								<span style="font-size: 3.5rem;">🎓</span>
+							</div>
+							<h4 style="color:  #ffff00; font-weight: 700; margin-bottom: 8px;">2020 to 2023</h4>
+							<h5 style="color: white; font-weight: 600; margin-bottom: 12px;">The BCA Era</h5>
+							<p style="color: #dddddd; line-height: 1.8; margin-bottom: 0;">Studied at Quantum University. Explored web dev, OOP, and built early-stage full-stack projects.</p>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+<div class="col-md-6 col-lg-4 mb-4">
+	<div class="glassmorphism-card p-4 animate__animated animate__fadeInUp h-100 text-center" style="min-height: 340px;">
+							<div class="timeline-icon mb-3">
+								<span style="font-size: 3.5rem;">🧠</span>
+							</div>
+							<h4 style="color:  #ffff00; font-weight: 700; margin-bottom: 8px;">2023</h4>
+							<h5 style="color: white; font-weight: 600; margin-bottom: 12px;">Logic Meets Code</h5>
+							<p style="color: #dddddd; line-height: 1.8; margin-bottom: 0;">Focused on mastering DSA with C++. Practiced problem-solving daily and unlocked true programming logic.</p>
+						</div>
+					</div>
+
+					<!-- Card 3 -->
+<div class="col-md-6 col-lg-4 mb-4">
+	<div class="glassmorphism-card p-4 animate__animated animate__fadeInUp h-100 text-center" style="min-height: 340px;">
+							<div class="timeline-icon mb-3">
+								<span style="font-size: 3.5rem;">⚙️</span>
+							</div>
+							<h4 style="color:  #ffff00; font-weight: 700; margin-bottom: 8px;">2024 to 2025</h4>
+							<h5 style="color: white; font-weight: 600; margin-bottom: 12px;">Cloud, DevOps & Games</h5>
+							<p style="color: #dddddd; line-height: 1.8; margin-bottom: 0;">MCA in Cloud Computing. Learned Docker, K8s, Jenkins, and built DevOps pipelines. Unity game dev for fun.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
 		<!-- Project Section -->
 		<section id="portfolio" class="dark_bg section-padding">
 			<div class="container">
@@ -936,39 +1000,39 @@
 		<script>
 		// Simple Portfolio Filtering - Debug Version
 		$(document).ready(function() {
-		    console.log('Filter script loaded');
-		    
-		    // Show all projects initially
-		    $('.mix').show();
-		    
-		    // Filter button click handler
-		    $('.filter').on('click', function(e) {
-		        e.preventDefault();
-		        console.log('Filter clicked');
-		        
-		        // Remove active class from all buttons
-		        $('.filter').removeClass('active');
-		        
-		        // Add active class to clicked button
-		        $(this).addClass('active');
-		        
-		        var filterValue = $(this).attr('data-filter');
-		        console.log('Filter value: ' + filterValue);
-		        
-		        if (filterValue === 'all') {
-		            $('.mix').fadeIn(200);
-		            console.log('Showing all projects');
-		        } else {
-		            $('.mix').fadeOut(200);
-		            setTimeout(function() {
-		                $('.mix' + filterValue).fadeIn(200);
-		                console.log('Showing projects for: ' + filterValue);
-		            }, 250);
-		        }
-		    });
-		    
-		    // Set initial active state
-		    $('.filter[data-filter="all"]').addClass('active');
+			console.log('Filter script loaded');
+			
+			// Show all projects initially
+			$('.mix').show();
+			
+			// Filter button click handler
+			$('.filter').on('click', function(e) {
+				e.preventDefault();
+				console.log('Filter clicked');
+				
+				// Remove active class from all buttons
+				$('.filter').removeClass('active');
+				
+				// Add active class to clicked button
+				$(this).addClass('active');
+				
+				var filterValue = $(this).attr('data-filter');
+				console.log('Filter value: ' + filterValue);
+				
+				if (filterValue === 'all') {
+					$('.mix').fadeIn(200);
+					console.log('Showing all projects');
+				} else {
+					$('.mix').fadeOut(200);
+					setTimeout(function() {
+						$('.mix' + filterValue).fadeIn(200);
+						console.log('Showing projects for: ' + filterValue);
+					}, 250);
+				}
+			});
+			
+			// Set initial active state
+			$('.filter[data-filter="all"]').addClass('active');
 		});
 		</script>
 		
