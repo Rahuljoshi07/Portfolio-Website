@@ -1,11 +1,11 @@
 /***************************************
 ========================================
 
-	Author Name   : Themeplaza
-	This is HTML5 template
-	Template Name : Roton Personal Portfolio Template
-	Version: 1.0
-	
+  Author Name   : Themeplaza
+  This is HTML5 template
+  Template Name : Roton Personal Portfolio Template
+  Version: 1.0
+  
 ****************************************
 =======================================/
 
@@ -14,17 +14,17 @@
 
  ==> Table Of Content
 
-	01. Default
-	02. Header
-	03. Banner
-	04. About
-	05. Service
-	06. Portfolio 
-	07. Resume
-	08. Testimonial
-	09. Blog
-	10. Contact
-	11. Footer
+  01. Default
+  02. Header
+  03. Banner
+  04. About
+  05. Service
+  06. Portfolio 
+  07. Resume
+  08. Testimonial
+  09. Blog
+  10. Contact
+  11. Footer
  
 
 ---------------------------------------------------------------- */
@@ -81,8 +81,6 @@
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  font-weight: 700;
-  color: #fff;
 }
 
 .section-padding {
@@ -573,12 +571,22 @@ a.back-to-top:focus {
   font-size: 15px;
   padding: 0 15px;
 }
+/* Ensure navbar links are visible (white) when .dark_bg_menu is active */
+/* Force navbar links to be white when .dark_bg_menu is active, even with .navbar-light or .navbar-fixed */
+.navbar-fixed.dark_bg_menu .navbar-nav .nav-link,
+.navbar-light.dark_bg_menu .navbar-nav .nav-link,
 .dark_bg_menu .navbar-nav .nav-link {
-  color: #fff;
+  color: #fff !important;
 }
 @media only screen and (max-width: 768px) {
   .navbar-light .navbar-nav .nav-link {
     color: #333;
+  }
+  /* Force navbar links to white on mobile when .dark_bg_menu is present */
+  transition: color 0s;
+  .navbar-fixed.dark_bg_menu .navbar-nav .nav-link,
+  .dark_bg_menu .navbar-nav .nav-link {
+    color: #fff !important;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -636,8 +644,10 @@ a.back-to-top:focus {
   background-color: #e0e5ec;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
-.dark_bg_menu {
-  z-index: 99999;
+/* Ensure navbar is always visible and on top */
+.dark_bg_menu,
+.navbar-fixed.dark_bg_menu {
+  z-index: 999999 !important;
   position: fixed;
   width: 100%;
   padding: 20px 0;
@@ -645,9 +655,10 @@ a.back-to-top:focus {
   -webkit-animation: fadeInDown 800ms;
   animation: fadeInDown 800ms;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 0px;
-  background-color: #000;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  background: #000 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
 }
 @media only screen and (max-width: 768px) {
   .navbar-fixed {
@@ -671,6 +682,64 @@ a.back-to-top:focus {
 /* ==========================================================================
 02. End Header Area
 ========================================================================== */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  background: rgba(0,0,0,0.85) !important;
+  min-height: 60px;
+  z-index: 99999;
+  gap: 28px;
+}
+.navbar-nav .nav-link {
+  display: block;
+  padding: 8px 0;
+  color: #fff !important;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  outline: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: color 0.2s;
+}
+.navbar-nav .nav-link:hover {
+  color: #ffff00 !important;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background: #111 !important;
+    min-height: auto;
+    padding: 10px 0;
+  }
+  .navbar-nav .nav-link {
+    padding: 8px 16px;
+    width: 100%;
+    text-align: left;
+  }
+}
+}
+
+/* Fallback: Always show navbar and its children */
+.navbar, .navbar-fixed, .dark_bg_menu {
+  background: #111 !important;
+  min-height: 60px;
+  z-index: 1000000 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
 /* ==========================================================================
 03. Start Banner Area
@@ -681,8 +750,9 @@ a.back-to-top:focus {
   height: 100%;
   top: 0;
 }
-.banner_content {
-  margin-top: 230px;
+ .banner_content {
+  margin-top: 280px;
+  margin-bottom: 210px;
 }
 .banner_content strong {
   font-size: 30px;
