@@ -5,13 +5,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	   <title>CodingNerd Personal Portfolio Template</title>
+	   <title>CodingNerd </title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800" rel="stylesheet">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >	
 		
 		<!--Favicon for this site -->
-		<link rel="icon" href="assets/img/f.jpeg"/>		
+	   <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">        
 		
 		<!-- Fonts -->
 		<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
@@ -251,16 +251,7 @@
   
 	<body data-spy="scroll" data-offset="80">
 
-		<!-- START PRELOADER -->
-			<div class="preloader">
-				<div class="loader">
-					<div class="loader-outter"></div>
-					<div class="loader-inner"></div>
-
-					<span>MC</span>
-				</div>
-			</div>
-		<!-- END PRELOADER -->		
+		
 		
 		<!-- START NAVBAR -->
 			<nav class="navbar navbar-toggleable-sm fixed-top navbar-light bg-faded site-navigation dark_bg_menu">
@@ -961,7 +952,7 @@
 								</a>
 								<a href="https://dev.to/rahuljoshi" target="_blank" class="flex items-center justify-center p-2 bg-black/50 rounded-xl bg-neon-blue/10 hover:border-neon-blue/30 border border-transparent transition-all group" title="Dev.to">
 									<svg class="w-6 h-6 text-neon-blue" fill="currentColor" viewBox="0 0 24 24">
-										<path d="M7.826 10.083a.784.784 0 0 0-.468-.175h-.701v4.198h.701a.786.786 0 0 0 .468-.175c.155-.117.233-.292.233-.525v-2.798c.001-.233-.078-.408-.233-.525zM19.236 3H4.764C3.791 3 3.002 3.787 3.002 4.760v14.48c0 .973.789 1.760 1.762 1.760h14.472c.973 0 1.762-.787 1.762-1.760V4.760C21.998 3.787 21.209 3 20.236 3zM9.195 13.414c0 .755-.466 1.901-1.942 1.898H5.389V8.665h1.903c1.424 0 1.903 1.144 1.903 1.899v2.85zm4.045-3.562H11.1v1.544h1.309v1.188H11.1v1.543h2.142v1.188h-2.498a.813.813 0 0 1-.833-.792V9.497a.813.813 0 0 1 .833-.792h2.498v1.147zm4.165 4.632c-.789 1.379-2.718 1.379-3.506 0l-1.245-2.142h1.424l.711 1.225.711-1.225h1.424l-1.519 2.142z"/>
+										<path d="M7.826 10.083a.784.784 0 0 0-.468-.175h-.701v4.198h.701a.786.786 0 0 0 .468-.175c.155-.117.233-.292.233-.525v-2.798c.001-.233-.078-.408-.233-.525zM19.236 3H4.764C3.791 3 3.002 3.787 3.002 4.760v14.48c0 .973.789 1.76 1.762 1.76h14.472c.973 0 1.762-.787 1.762-1.76V4.760C21.998 3.787 21.209 3 20.236 3zM9.195 13.414c0 .755-.466 1.901-1.942 1.898H5.389V8.665h1.903c1.424 0 1.903 1.144 1.903 1.899v2.85zm4.045-3.562H11.1v1.544h1.309v1.188H11.1v1.543h2.142v1.188h-2.498a.813.813 0 0 1-.833-.792V9.497a.813.813 0 0 1 .833-.792h2.498v1.147zm4.165 4.632c-.789 1.379-2.718 1.379-3.506 0l-1.245-2.142h1.424l.711 1.225.711-1.225h1.424l-1.519 2.142z"/>
 									</svg>
 								</a>
 							</div>
@@ -996,45 +987,36 @@
 		<script src="assets/js/nivo-lightbox.js"></script>
 		<script src="assets/js/form-contact.js"></script>
 		<script src="assets/js/main.js"></script>
-		
 		<script>
-		// Simple Portfolio Filtering - Debug Version
-		$(document).ready(function() {
-			console.log('Filter script loaded');
-			
-			// Show all projects initially
-			$('.mix').show();
-			
-			// Filter button click handler
-			$('.filter').on('click', function(e) {
-				e.preventDefault();
-				console.log('Filter clicked');
-				
-				// Remove active class from all buttons
-				$('.filter').removeClass('active');
-				
-				// Add active class to clicked button
-				$(this).addClass('active');
-				
-				var filterValue = $(this).attr('data-filter');
-				console.log('Filter value: ' + filterValue);
-				
-				if (filterValue === 'all') {
-					$('.mix').fadeIn(200);
-					console.log('Showing all projects');
-				} else {
-					$('.mix').fadeOut(200);
-					setTimeout(function() {
-						$('.mix' + filterValue).fadeIn(200);
-						console.log('Showing projects for: ' + filterValue);
-					}, 250);
-				}
-			});
-			
-			// Set initial active state
-			$('.filter[data-filter="all"]').addClass('active');
-		});
-		</script>
-		
+        // Simple Portfolio Filtering - Debug Version
+        $(document).ready(function() {
+            console.log('Filter script loaded');
+            // Show all projects initially
+            $('.mix').show();
+            // Filter button click handler
+            $('.filter').on('click', function(e) {
+                e.preventDefault();
+                console.log('Filter clicked');
+                // Remove active class from all buttons
+                $('.filter').removeClass('active');
+                // Add active class to clicked button
+                $(this).addClass('active');
+                var filterValue = $(this).attr('data-filter');
+                console.log('Filter value: ' + filterValue);
+                if (filterValue === 'all') {
+                    $('.mix').fadeIn(200);
+                    console.log('Showing all projects');
+                } else {
+                    $('.mix').fadeOut(200);
+                    setTimeout(function() {
+                        $('.mix' + filterValue).fadeIn(200);
+                        console.log('Showing projects for: ' + filterValue);
+                    }, 250);
+                }
+            });
+            // Set initial active state
+            $('.filter[data-filter="all"]').addClass('active');
+        });
+        </script>
 	</body>
 </html>
