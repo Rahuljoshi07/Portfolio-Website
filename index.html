@@ -771,22 +771,26 @@
 					<div class="text-center mb-12">
 						<button @click="activeCategory = 'all'" 
 								:class="activeCategory === 'all' ? 'active' : ''"
-								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105">
+								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
+								aria-label="all">
 							🏠 All
 						</button>
 						<button @click="activeCategory = 'devops'" 
 								:class="activeCategory === 'devops' ? 'active' : ''"
-								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105">
+								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
+								aria-label="devops">
 							⚙️ DevOps
 						</button>
 						<button @click="activeCategory = 'fullstack'" 
 								:class="activeCategory === 'fullstack' ? 'active' : ''"
-								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105">
+								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
+								aria-label="fullstack">
 							💻 Full Stack
 						</button>
 						<button @click="activeCategory = 'game'" 
 								:class="activeCategory === 'game' ? 'active' : ''"
-								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105">
+								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
+								aria-label="game">
 							🎮 Game
 						</button>
 					</div>
@@ -1077,7 +1081,33 @@
 		<script src="assets/js/jquery.easing.min.js"></script>  
 		<script src="assets/js/nivo-lightbox.js"></script>
 		<script src="assets/js/form-contact.js"></script>
-		<script src="assets/js/main.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+        // Backup JavaScript filtering, in case Alpine.js has issues
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.category-btn');
+            const projects = document.querySelectorAll('.glassmorphism-card');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Clear active state from all buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('aria-label');
+
+                    // Show/hide projects based on category
+                    projects.forEach(project => {
+                        if (category === 'all' || project.getAttribute('data-category') === category) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+        </script>
 		<script>
         // Simple Portfolio Filtering - Debug Version
         $(document).ready(function() {
