@@ -705,8 +705,6 @@
 			</div>
 		</div>
 	</section>
-</body>
-</html>
 		<!-- About Me Section End -->
 	
 		<!-- Timeline Section with Glassmorphism Cards -->
@@ -773,39 +771,33 @@
 								:class="activeCategory === 'all' ? 'active' : ''"
 								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
 								aria-label="all">
-							🏠 All
+							 All
 						</button>
 						<button @click="activeCategory = 'devops'" 
 								:class="activeCategory === 'devops' ? 'active' : ''"
 								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
 								aria-label="devops">
-							⚙️ DevOps
+							 DevOps
 						</button>
 						<button @click="activeCategory = 'fullstack'" 
 								:class="activeCategory === 'fullstack' ? 'active' : ''"
 								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
 								aria-label="fullstack">
-							💻 Full Stack
+							 Full Stack
 						</button>
 						<button @click="activeCategory = 'game'" 
 								:class="activeCategory === 'game' ? 'active' : ''"
 								class="category-btn bg-transparent border-2 border-yellow-400 text-yellow-400 px-6 py-3 mx-2 mb-2 rounded-full font-semibold uppercase text-sm transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105"
 								aria-label="game">
-							🎮 Game
+							 Game
 						</button>
 					</div>
 					
-					<!-- Projects Grid -->
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<!-- Projects Grid -->
+						<div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300" style="min-height: 600px; position: relative;">
 						
 						<!-- DevOps Project 1 -->
-						<div x-show="activeCategory === 'all' || activeCategory === 'devops'"
-							 x-transition:enter="transition ease-out duration-500"
-							 x-transition:enter-start="opacity-0 scale-90"
-							 x-transition:enter-end="opacity-100 scale-100"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 scale-100"
-							 x-transition:leave-end="opacity-0 scale-90"
+                    <div x-show="activeCategory === 'all' || activeCategory === 'devops'"
 							 class="glassmorphism-card rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/30 hover:bg-white/5 h-96 flex flex-col justify-between"
 							 data-category="devops">
 							<div>
@@ -819,13 +811,7 @@
 						</div>
 						
 						<!-- DevOps Project 2 -->
-						<div x-show="activeCategory === 'all' || activeCategory === 'devops'"
-							 x-transition:enter="transition ease-out duration-500"
-							 x-transition:enter-start="opacity-0 scale-90"
-							 x-transition:enter-end="opacity-100 scale-100"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 scale-100"
-							 x-transition:leave-end="opacity-0 scale-90"
+                	<div x-show="activeCategory === 'all' || activeCategory === 'devops'"
 							 class="glassmorphism-card rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/30 hover:bg-white/5 h-96 flex flex-col justify-between"
 							 data-category="devops">
 							<div>
@@ -833,19 +819,13 @@
 									<i class="fa fa-ship text-5xl text-yellow-400 bg-yellow-400/10 border-2 border-gray-800 rounded-full p-4 w-20 h-20 inline-flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-3 hover:bg-yellow-400/20 hover:border-yellow-400 hover:text-white"></i>
 								</div>
 								<h3 class="text-white text-xl font-semibold mb-4 transition-colors duration-300 hover:text-yellow-400">K8-Monitoring-Dashboards</h3>
-								<p class="text-gray-300 text-sm leading-relaxed mb-4">A comprehensive monitoring dashboard deployed on Kubernetes cluster. Real-time system metrics visualization with alerting capabilities.</p>
+								<p class="text-gray-300 text-sm leading-relaxed mb-4">A comprehensive monitoring dashboard deployed on Kubernetes cluster. Real-time insights and alerts.</p>
 							</div>
 							<a href="https://github.com/Rahuljoshi07/System-Monitor-Dashboard-on-Kubernetes" target="_blank" class="bg-yellow-400 text-black border-2 border-yellow-400 px-6 py-2 rounded-full font-semibold uppercase transition-all duration-300 hover:bg-transparent hover:text-yellow-400 hover:scale-105 inline-block">Code</a>
 						</div>
 						
 						<!-- DevOps Project 3 -->
 						<div x-show="activeCategory === 'all' || activeCategory === 'devops'"
-							 x-transition:enter="transition ease-out duration-500"
-							 x-transition:enter-start="opacity-0 scale-90"
-							 x-transition:enter-end="opacity-100 scale-100"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 scale-100"
-							 x-transition:leave-end="opacity-0 scale-90"
 							 class="glassmorphism-card rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/30 hover:bg-white/5 h-96 flex flex-col justify-between"
 							 data-category="devops">
 							<div>
@@ -860,12 +840,6 @@
 						
 						<!-- Full Stack Project 1 -->
 						<div x-show="activeCategory === 'all' || activeCategory === 'fullstack'"
-							 x-transition:enter="transition ease-out duration-500"
-							 x-transition:enter-start="opacity-0 scale-90"
-							 x-transition:enter-end="opacity-100 scale-100"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 scale-100"
-							 x-transition:leave-end="opacity-0 scale-90"
 							 class="glassmorphism-card rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/30 hover:bg-white/5 h-96 flex flex-col justify-between"
 							 data-category="fullstack">
 							<div>
@@ -880,12 +854,6 @@
 						
 						<!-- Full Stack Project 2 -->
 						<div x-show="activeCategory === 'all' || activeCategory === 'fullstack'"
-							 x-transition:enter="transition ease-out duration-500"
-							 x-transition:enter-start="opacity-0 scale-90"
-							 x-transition:enter-end="opacity-100 scale-100"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 scale-100"
-							 x-transition:leave-end="opacity-0 scale-90"
 							 class="glassmorphism-card rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/30 hover:bg-white/5 h-96 flex flex-col justify-between"
 							 data-category="fullstack">
 							<div>
@@ -900,12 +868,6 @@
 						
 						<!-- Game Project -->
 						<div x-show="activeCategory === 'all' || activeCategory === 'game'"
-							 x-transition:enter="transition ease-out duration-500"
-							 x-transition:enter-start="opacity-0 scale-90"
-							 x-transition:enter-end="opacity-100 scale-100"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 scale-100"
-							 x-transition:leave-end="opacity-0 scale-90"
 							 class="glassmorphism-card rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/30 hover:bg-white/5 h-96 flex flex-col justify-between"
 							 data-category="game">
 							<div>
@@ -1083,102 +1045,28 @@
 		<script src="assets/js/form-contact.js"></script>
         <script src="assets/js/main.js"></script>
         <script>
-        // Backup JavaScript filtering, in case Alpine.js has issues
+        // Scroll position stabilization for Alpine.js filtering
         document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.category-btn');
-            const projects = document.querySelectorAll('.glassmorphism-card');
-
+            let storedScrollY = 0;
+            
             buttons.forEach(button => {
                 button.addEventListener('click', function () {
-                    // Clear active state from all buttons
-                    buttons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const category = this.getAttribute('aria-label');
-
-                    // Show/hide projects based on category
-                    projects.forEach(project => {
-                        if (category === 'all' || project.getAttribute('data-category') === category) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    });
+                    // Store current scroll position before Alpine.js processes the filter
+                    storedScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Restore scroll position after Alpine.js finishes filtering
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: storedScrollY,
+                            behavior: 'instant'
+                        });
+                    }, 100);
                 });
             });
         });
+        
         </script>
-		<script>
-        // Simple Portfolio Filtering - Debug Version
-        $(document).ready(function() {
-            console.log('Filter script loaded');
-            // Show all projects initially
-            $('.mix').show();
-            // Filter button click handler
-            $('.filter').on('click', function(e) {
-                e.preventDefault();
-                console.log('Filter clicked');
-                // Remove active class from all buttons
-                $('.filter').removeClass('active');
-                // Add active class to clicked button
-                $(this).addClass('active');
-                var filterValue = $(this).attr('data-filter');
-                console.log('Filter value: ' + filterValue);
-                if (filterValue === 'all') {
-                    $('.mix').fadeIn(200);
-                    console.log('Showing all projects');
-                } else {
-                    $('.mix').fadeOut(200);
-                    setTimeout(function() {
-                        $('.mix' + filterValue).fadeIn(200);
-                        console.log('Showing projects for: ' + filterValue);
-                    }, 250);
-                }
-            });
-            // Set initial active state
-            $('.filter[data-filter="all"]').addClass('active');
-        });
-        </script>
-		<script>
-// Animation for project cards on category change (works on all screens)
-document.addEventListener('alpine:init', () => {
-  Alpine.directive('show', (el, { expression }, { evaluateLater, cleanup }) => {
-    let evaluate = evaluateLater(expression)
-    let lastVisible = el.style.display !== 'none';
-    function animate(visible) {
-      if (visible) {
-        el.style.opacity = 0;
-        el.style.transform = 'scale(0.92)';
-        el.style.display = '';
-        setTimeout(() => {
-          el.style.transition = 'opacity 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1)';
-          el.style.opacity = 1;
-          el.style.transform = 'scale(1)';
-        }, 10);
-      } else {
-        el.style.transition = 'opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1)';
-        el.style.opacity = 0;
-        el.style.transform = 'scale(0.92)';
-        setTimeout(() => {
-          el.style.display = 'none';
-        }, 400);
-      }
-    }
-    function update() {
-      evaluate(visible => {
-        if (visible !== lastVisible) {
-          animate(visible);
-          lastVisible = visible;
-        }
-      });
-    }
-    update();
-    let observer = new MutationObserver(update);
-    observer.observe(el, { attributes: true, attributeFilter: ['style'] });
-    cleanup(() => observer.disconnect());
-  });
-});
-</script>
 		<style>
 /* Responsive Growth Timeline Section Enhancements */
 @media (max-width: 1200px) {
@@ -1507,6 +1395,73 @@ document.addEventListener('alpine:init', () => {
 .project-animate-in {
   animation: fadeScaleIn 0.5s cubic-bezier(0.4,0,0.2,1);
 }
+
+/* Mobile-specific fixes for screen jumping */
+@media (max-width: 768px) {
+  #projects-container {
+    min-height: 400px !important;
+    transition: none !important;
+  }
+  
+  #portfolio {
+    scroll-margin-top: 80px;
+    position: relative;
+  }
+  
+  .glassmorphism-card {
+    min-height: 280px !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #projects-container {
+    min-height: 350px !important;
+  }
+  
+  .glassmorphism-card {
+    min-height: 240px !important;
+  }
+}
+
+/* Prevent body scroll during filtering */
+.filtering-active {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Stable container heights for different screen sizes */
+@media (max-width: 1200px) {
+  #projects-container {
+    min-height: 500px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  #projects-container {
+    min-height: 450px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #projects-container {
+    min-height: 400px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #projects-container {
+    min-height: 350px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects-container {
+    min-height: 300px !important;
+  }
+}
+
 		</style>
 	</body>
 </html>
