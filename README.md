@@ -1,10 +1,5 @@
 # 🚀 Personal Portfolio - Rahul Joshi
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://rahuljoshi07.github.io/Personal-Portfolio/)
-[![GitHub Stars](https://img.shields.io/github/stars/Rahuljoshi07/Personal-Portfolio?style=for-the-badge&color=yellow)](https://github.com/Rahuljoshi07/Personal-Portfolio/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/Rahuljoshi07/Personal-Portfolio?style=for-the-badge&color=blue)](https://github.com/Rahuljoshi07/Personal-Portfolio/network/members)
-[![Last Commit](https://img.shields.io/github/last-commit/Rahuljoshi07/Personal-Portfolio?style=for-the-badge&color=red)](https://github.com/Rahuljoshi07/Personal-Portfolio/commits/main)
-
 A cutting-edge, responsive personal portfolio website showcasing my expertise as a **DevOps Engineer**, **Cloud Developer**, and **Full-Stack Developer**. Built with modern web technologies and featuring stunning glassmorphism design, smooth animations, and professional presentation.
 
 ## 🎯 About Me
@@ -331,6 +326,5 @@ MIT License - You are free to:
 
 **Made with ❤️ by Rahul Joshi**
 
-*Last Updated: January 2025*
 
 </div>
