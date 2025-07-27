@@ -1,12 +1,14 @@
 (function($) {
   $(document).ready(function() {
-    // Smooth scroll for navbar links
+    // Smooth scroll for navbar links with dynamic offset for responsive navbar
     $('.navbar-nav .nav-link').on('click', function(event) {
       var target = $(this.getAttribute('href'));
       if (target.length) {
         event.preventDefault();
+        // Get the current navbar height (adjust selector if needed)
+        var navbarHeight = $('.navbar, .site-navigation, .header, .header-white, .fixed-top').filter(':visible').first().outerHeight() || 0;
         $('html, body').stop().animate({
-          scrollTop: target.offset().top - 70 // adjust offset for fixed navbar
+          scrollTop: target.offset().top - navbarHeight
         }, 600, 'swing');
       }
     });
