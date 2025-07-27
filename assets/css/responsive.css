@@ -58,9 +58,155 @@
 
 /* mobile or only mobile */
 @media (max-width: 767px) {
+	/* Force dark background on mobile navbar */
+	.navbar,
+	.navbar.bg-faded,
+	.navbar-light.bg-faded {
+		background-color: #000 !important;
+		background: #000 !important;
+		transition: none !important;
+	}
+	
+	/* Fix navbar collapse background and prevent auto-close */
+	.navbar-collapse {
+		background-color: #000 !important;
+		background: #000 !important;
+		text-align: center !important;
+		transition: none !important;
+		position: relative !important;
+		z-index: 1000 !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+	
+	.navbar-collapse.collapsing,
+	.navbar-collapse.show {
+		background-color: #000 !important;
+		background: #000 !important;
+		text-align: center !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+	
+	/* Ensure nav links are white on mobile */
 	.navbar-light .navbar-nav .nav-link {
-		color: #333;
-		padding: 0 0 10px;
+		color: #fff !important;
+		padding: 12px 0 !important;
+		text-align: center !important;
+		display: block !important;
+		width: 100% !important;
+		margin: 0 auto !important;
+		transition: color 0.3s ease !important;
+		background: transparent !important;
+	}
+	
+	.navbar-light .navbar-nav .nav-link:hover,
+	.navbar-light .navbar-nav .nav-link:focus {
+		color: #ffff00 !important;
+		background: transparent !important;
+	}
+	
+	/* Center align dropdown navigation items on mobile */
+	.navbar-nav {
+		text-align: center !important;
+		display: block !important;
+		width: 100% !important;
+		margin: 0 auto !important;
+		padding: 10px 0 !important;
+		background-color: #000 !important;
+		background: #000 !important;
+	}
+	
+	.navbar-nav .nav-item {
+		display: block !important;
+		width: 100% !important;
+		text-align: center !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		background: transparent !important;
+	}
+	
+	/* Prevent Bootstrap's flex layout from interfering */
+	.navbar-collapse.collapsing .navbar-nav,
+	.navbar-collapse.show .navbar-nav {
+		flex-direction: column !important;
+		align-items: center !important;
+		width: 100% !important;
+		background-color: #000 !important;
+		background: #000 !important;
+	}
+	
+	/* Override Bootstrap's default navbar-nav flex properties */
+	.navbar-expand-md .navbar-nav {
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+	
+	.navbar-toggler {
+		transition: all 0.3s ease !important;
+	}
+	
+	/* Preserve hamburger button animation */
+	.navbar-toggler-icon {
+		transition: all 0.3s ease !important;
+	}
+	
+	.navbar-toggler-icon::before,
+	.navbar-toggler-icon::after {
+		transition: all 0.3s ease !important;
+	}
+	
+	/* Completely disable Bootstrap collapse animations */
+	.navbar-collapse {
+		transition: none !important;
+		height: auto !important;
+		overflow: visible !important;
+	}
+	
+	.navbar-collapse.collapsing {
+		display: block !important;
+		visibility: visible !important;
+		text-align: center !important;
+		transition: none !important;
+		height: auto !important;
+		overflow: visible !important;
+		background-color: #000 !important;
+		background: #000 !important;
+		transform: none !important;
+		-webkit-transform: none !important;
+		-moz-transform: none !important;
+		-o-transform: none !important;
+	}
+	
+	.navbar-collapse.show {
+		height: auto !important;
+		overflow: visible !important;
+	}
+	
+	.navbar-collapse.collapsing .navbar-nav {
+		text-align: center !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		width: 100% !important;
+		justify-content: center !important;
+		background-color: #000 !important;
+		background: #000 !important;
+	}
+	
+	.navbar-collapse.collapsing .navbar-nav .nav-item {
+		text-align: center !important;
+		width: 100% !important;
+		display: block !important;
+		background: transparent !important;
+	}
+	
+	.navbar-collapse.collapsing .navbar-nav .nav-link {
+		text-align: center !important;
+		width: 100% !important;
+		display: block !important;
+		color: #fff !important;
+		background: transparent !important;
 	}
 	.funfact {
 		margin-bottom: 30px;
