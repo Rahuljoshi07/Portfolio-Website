@@ -710,7 +710,7 @@
 		<!-- Timeline Section with Glassmorphism Cards -->
 		<section id="timeline" style="background-color: #000000; padding: 80px 0;">
 			<div class="container">
-				<h2 class="text-center mb-5" style="color:  #ffff00; font-weight: bold; font-size: 2.8rem; position: relative;">
+				<h2 class="text-center mb-5" style="color:  #ffff00; font-weight: bold; font-size: 3rem; position: relative;">
 					<span class="timeline-section-icon">🌟</span> My <span style="color: white;">Growth Timeline</span>
 					<div style="width: 100px; height: 4px; background-color:  #ffff00; margin: 10px auto 0; border-radius: 50px;"></div>
 				</h2>
@@ -916,26 +916,37 @@
 					<div class="lg:col-span-2">
 							<div class="glassmorphism-card rounded-2xl p-8 shadow-xl">
 							<h2 class="text-2xl font-bold text-white mb-6">Send Message</h2>
-							<form class="space-y-6">
+							<!-- Success/Error Messages -->
+							<div id="form-messages" class="mb-6 hidden"></div>
+							<div id="loader" class="hidden mb-6 text-center">
+								<div class="inline-flex items-center px-4 py-2 bg-neon-blue/20 text-neon-blue rounded-lg">
+									<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-neon-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+										<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+										<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+									</svg>
+									Sending message...
+								</div>
+							</div>
+							<form id="contact-form" method="POST" action="contact.php" class="space-y-6">
 								<div class="grid md:grid-cols-2 gap-6">
 									<div class="space-y-2">
-										<label class="text-sm font-medium text-gray-300 uppercase tracking-wide">Full Name</label>
-										<input type="text" placeholder="John Doe" class="w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none">
+										<label for="name" class="text-sm font-medium text-gray-300 uppercase tracking-wide">Full Name</label>
+										<input type="text" id="name" name="name" placeholder="John Doe" class="requiredField w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none" required>
 									</div>
 									<div class="space-y-2">
-										<label class="text-sm font-medium text-gray-300 uppercase tracking-wide">Email Address</label>
-										<input type="email" placeholder="john@example.com" class="w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none">
+										<label for="email" class="text-sm font-medium text-gray-300 uppercase tracking-wide">Email Address</label>
+										<input type="email" id="email" name="email" placeholder="john@example.com" class="requiredField email w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none" required>
 									</div>
 								</div>
 								<div class="space-y-2">
-									<label class="text-sm font-medium text-gray-300 uppercase tracking-wide">Subject</label>
-									<input type="text" placeholder="Project Collaboration" class="w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none">
+									<label for="subject" class="text-sm font-medium text-gray-300 uppercase tracking-wide">Subject</label>
+									<input type="text" id="subject" name="subject" placeholder="Project Collaboration" class="requiredField w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none" required>
 								</div>
 								<div class="space-y-2">
-									<label class="text-sm font-medium text-gray-300 uppercase tracking-wide">Message</label>
-									<textarea rows="4" placeholder="Tell me about your project, goals, and how we can work together..." class="w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none resize-none"></textarea>
+									<label for="message" class="text-sm font-medium text-gray-300 uppercase tracking-wide">Message</label>
+									<textarea id="message" name="message" rows="4" placeholder="Tell me about your project, goals, and how we can work together..." class="requiredField w-full px-4 py-3 bg-black/70 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-neon-blue transition-all outline-none resize-none" required></textarea>
 								</div>
-								<button type="submit" class="w-full bg-gradient-to-r from-neon-blue to-deep-blue text-white font-bold py-4 px-8 rounded-lg hover:shadow-lg hover:shadow-neon-blue/25 transform hover:scale-105 transition-all duration-300">
+								<button type="submit" name="submit" class="submit w-full bg-gradient-to-r from-neon-blue to-deep-blue text-white font-bold py-4 px-8 rounded-lg hover:shadow-lg hover:shadow-neon-blue/25 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
 									<span class="flex items-center justify-center">
 										Send Message
 										<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1224,34 +1235,58 @@
 			transition: font-size 0.3s ease;
 		}
 
-		/* Responsive breakpoints for timeline section star icon */
+		/* Timeline heading responsive adjustments */
 		@media (max-width: 1200px) {
+			#timeline h2 {
+				font-size: 2rem !important;
+			}
 			.timeline-section-icon {
 				font-size: 0.9em !important;
 			}
 		}
 
 		@media (max-width: 992px) {
+			#timeline h2 {
+				font-size: 1.8rem !important;
+			}
 			.timeline-section-icon {
 				font-size: 0.85em !important;
 			}
 		}
 
 		@media (max-width: 768px) {
+			#timeline h2 {
+				font-size: 1.5rem !important;
+			}
 			.timeline-section-icon {
 				font-size: 0.8em !important;
 			}
 		}
 
 		@media (max-width: 576px) {
+			#timeline h2 {
+				font-size: 1.3rem !important;
+			}
 			.timeline-section-icon {
 				font-size: 0.75em !important;
 			}
 		}
 
 		@media (max-width: 480px) {
+			#timeline h2 {
+				font-size: 1.1rem !important;
+			}
 			.timeline-section-icon {
 				font-size: 0.7em !important;
+			}
+		}
+
+		@media (max-width: 400px) {
+			#timeline h2 {
+				font-size: 1rem !important;
+			}
+			.timeline-section-icon {
+				font-size: 0.65em !important;
 			}
 		}
 
