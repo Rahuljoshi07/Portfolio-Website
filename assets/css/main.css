@@ -159,6 +159,10 @@
 }
 html {
   overflow-x: hidden;
+  background-color: #000000 !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -168,6 +172,11 @@ body {
   letter-spacing: 0.5px;
   color: #333333;
   overflow-x: hidden;
+  background-color: #000000 !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overscroll-behavior-y: contain;
 }
 h1,
 h2,
